@@ -1,0 +1,92 @@
+.success-content {
+    background: hsl(0, 0%, 100%);
+    width: 500px;
+    height: 500px;
+    padding: 80px;
+    border: 1px solid hsl(4, 100%, 67%);
+    border-radius: 20px;
+    display: none;
+    flex-direction: column;
+}
+
+.success-info img {
+    width: 64px;
+}
+
+.success-info h1 {
+    font-size: 3em;
+    font-weight: bold;
+    color: hsl(234, 29%, 20%);
+    padding: 20px 0;
+}
+
+.success-info p {
+    color: hsl(235, 18%, 26%);
+    font-size: 0.9em;
+    padding-bottom: 20px;
+}
+
+b {
+    font-weight: bold;
+    color: hsl(234, 29%, 20%);
+}
+
+.dismiss {
+    padding: 15px;
+    border-radius: 5px;
+    border: none;
+    background-color: hsl(234, 29%, 20%);
+    font-weight: bold;
+    color: hsl(0, 0%, 100%);
+  }
+  
+  .dismiss:hover {
+    background: linear-gradient(90deg, rgb(235, 86, 182) 0%, rgba(255,150,143,1) 20%, rgba(255,98,87,1) 100%);
+    cursor: pointer;
+  }
+
+  @media screen and (max-width: 850px) {
+    .success-content {
+        width: 300px;
+        height: 100vh;
+        border: none;
+        padding: 50px;
+        border-radius: 0px;
+        display: flex;
+    }
+
+    .success-info img {
+        padding-top: 0px;
+        width: 64px;
+    }
+
+    .success-info h1 {
+        font-size: 3em;
+        font-weight: bold;
+        color: hsl(234, 29%, 20%);
+    }
+
+    .success-info p {
+        color: hsl(235, 18%, 26%);
+        font-size: 1em;
+        padding-bottom: 100px;
+    }
+
+    b {
+        font-weight: bold;
+        color: hsl(234, 29%, 20%);
+    }
+
+    .dismiss {
+        border-radius: 5px;
+        border: none;
+        background-color: hsl(234, 29%, 20%);
+        font-weight: bold;
+        color: hsl(0, 0%, 100%);
+      }
+      
+      .dismiss:hover {
+        background: linear-gradient(45deg, hsl(318, 49%, 60%), hsl(4, 100%, 67%));
+        cursor: pointer;
+      }
+  }

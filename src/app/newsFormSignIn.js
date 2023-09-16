@@ -1,15 +1,15 @@
 'use client'
 
 import React, { useState } from "react";
-import "./page.css"
-import Attribution from "@/components/attributtion";
-import NewsFormSuccess from "@/app/success/newsFormSuccess";
+import "../../styles/newsForm.css";
+import Attribution from "@/app/components/attributtion";
+import NewsFormSuccess from "./newsFormSuccess";
+import formDisabler from "./formDisabler";
 import Image from "next/image"
-import formDisabler from "@/components/formDisabler";
 
 function emailValidation(e) {
   const email = document.getElementById("email");
-  const emailRequired = document.querySelector(".email-required");
+  const emailRequired = document.querySelector(".email_required");
   const success = document.querySelector(".success-content");
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   const blurredClasses = document.querySelector(".home", "illustration-sign-up-desktop");
@@ -32,16 +32,16 @@ function emailValidation(e) {
   }
 };
 
-export default function Home() {
+export default function NewsFormSignIn() {
   return (
-    <div className="news-container">
+    <div className="news_container">
       <div className="home centered">
         <section className="form_section">
-          <header className="header">
+          <header>
             <h1>Stay updated!</h1>
             <p>Join 60,000+ product managers receiving monthly updates on:</p>
           </header>
-          <ul className="pros">
+          <ul>
             <li>
               <Image
                 src="/news-icon-list.svg"
@@ -73,17 +73,16 @@ export default function Home() {
               <p>And much more!</p>
             </li>
           </ul>
-          <form className= "submit-form" onSubmit={e => e.preventDefault()}>
-            <div className="email-headers">
-              <p className="email-label">Email adress</p>
-              <p hidden className="email-required">Valid email required</p>
+          <form onSubmit={e => e.preventDefault()}>
+            <div className="email_headers">
+              <p className="email_label">Email adress</p>
+              <p hidden className="email_required">Valid email required</p>
             </div>
             <input
               required=""
-              className="email-input"
               id="email"
               type="email"
-              placeholder="example@yourcompany.com"
+              placeholder="email@company.com"
               autoComplete="off"
             />
             <button
@@ -100,5 +99,4 @@ export default function Home() {
       <Attribution />
     </div>
   );
-
 }
