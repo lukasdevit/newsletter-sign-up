@@ -1,16 +1,16 @@
 export default function formDisabler(e) {
-    const email = document.getElementById("email");
+    const emailInput = document.getElementById("email-input");
     const submitButton = document.querySelector(".submit");
 
     if (e === true) {
         submitButton.disabled = true;
         submitButton.style.pointerEvents = "none";
-        email.disabled = true;
+        emailInput.disabled = true;
         return true;
     } else {
         submitButton.disabled = false;
         submitButton.style.pointerEvents = "auto";
-        email.disabled = false;
+        emailInput.disabled = false;
         return false;
     }
 }
