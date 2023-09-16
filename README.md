@@ -46,8 +46,8 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: ***This repo***
+- Live Site URL: [Vercel Link]([https://your-live-site-url.com](https://vercel.com/lukasdevit/newsletter-sign-up))
 
 ## My process
 
