@@ -1,6 +1,7 @@
 import React from "react";
 import "./newsFormSuccess.css";
 import formDisabler from "@/components/formDisabler";
+import Image from "next/image";
 
 const hidePopup = () => {
   const popup = document.querySelector(".success-content");
