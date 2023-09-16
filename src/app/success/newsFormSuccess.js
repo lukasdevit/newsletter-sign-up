@@ -10,19 +10,19 @@ const hidePopup = () => {
   popup.style.display = "none";
   formDisabler(false);
 };
-export default function NewsFormSuccess() {
+export default function NewsFormSuccess({ email }) {
   return (
-      <div className="success-content centered">
-        <div className="success-info"><Image width="64" height="64" src="/news-icon-success.svg" alt="" />
+      <section role="successful-signup-information" className="success-content centered">
+        <article className="success-info"><Image width="64" height="64" src="/news-icon-success.svg" alt="" />
         <h1>Thanks for subscribing!</h1>
         <p>
-          A confirmation email has been sent to <b>example@yourcompany.com.</b>{" "}
+          A confirmation email has been sent to <b>{ email }</b>. {" "}
           Please open it and click the button inside to confirm your
           subscription.
-        </p></div>
+        </p></article>
         <button className="dismiss" type="submit" onClick={hidePopup}>
           Dismiss message
         </button>
-      </div>
+      </section>
   );
 }

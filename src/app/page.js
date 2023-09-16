@@ -5,36 +5,33 @@ import "./page.css"
 import Attribution from "@/components/attributtion";
 import NewsFormSuccess from "@/app/success/newsFormSuccess";
 import Image from "next/image"
-import formDisabler from "@/components/formDisabler";
 
-function emailValidation(e) {
-  const email = document.getElementById("email");
+function emailValidation() {
+  const emailInput = document.getElementById("email-input");
   const emailRequired = document.querySelector(".email-required");
-  const success = document.querySelector(".success-content");
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  const successPopup = document.querySelector(".success-content");
   const blurredClasses = document.querySelector(".home", "illustration-sign-up-desktop");
-
-
-  if (email.value === "") {
-    emailRequired.hidden = false;
-    return false;
-  }
-  if (!emailRegex.test(email.value)) {
-    emailRequired.hidden = false;
-    return false;
-  }
-  if (emailRegex.test(email.value)) {
+  console.log(emailInput.reportValidity());
+  console.log(emailInput.value);
+  // if emails is valid and not empty
+  if (emailInput.reportValidity() && emailInput.value !== "") {
     emailRequired.hidden = true;
-    success.style.display = "flex";
+    successPopup.style.display = "flex";
     blurredClasses.classList.add("blur");
-    formDisabler(true);
+    console.log("valid");
     return true;
+  } else {
+    emailRequired.hidden = false;
+    console.log("invalid");
+    return false;
   }
 };
 
 export default function Home() {
+  const [email, setEmail] = useState(""); /* implemented useState */
+  console.log(email);
   return (
-    <div className="news-container">
+    <section className="news-container">
       <div className="home centered">
         <section className="form_section">
           <header className="header">
@@ -73,18 +70,19 @@ export default function Home() {
               <p>And much more!</p>
             </li>
           </ul>
-          <form className= "submit-form" onSubmit={e => e.preventDefault()}>
+          <form className= "submit-form" onSubmit={e => (e.preventDefault())}>
             <div className="email-headers">
               <p className="email-label">Email adress</p>
               <p hidden className="email-required">Valid email required</p>
             </div>
             <input
               required=""
+              id="email-input"
               className="email-input"
-              id="email"
               type="email"
               placeholder="example@yourcompany.com"
               autoComplete="off"
+              onChange={e => setEmail(e.target.value)}
             />
             <button
             onClick={emailValidation}
@@ -96,9 +94,9 @@ export default function Home() {
         <Image width="400" height="593" className="illustration-sign-up-desktop" src="\illustration-sign-up-desktop.svg" alt="" />
         <Image width="375" height="284" className="illustration-sign-up-mobile" src="\illustration-sign-up-mobile.svg" alt="" />
       </div>
-      <NewsFormSuccess />
+      <NewsFormSuccess email={email}/>
       <Attribution />
-    </div>
+    </section>
   );
 
 }

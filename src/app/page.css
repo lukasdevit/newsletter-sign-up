@@ -16,6 +16,7 @@
   width: 90%;
   padding-bottom: 10px;
 }
+
 .header h1 {
   font-size: 3.5em;
   line-height: 5px;
@@ -94,9 +95,10 @@
     margin: 0 auto;
     padding: 0;
   }
+
   .home {
-    height: 896px;
-    width: 414px;
+    height: 100vh; /* Removed fixed height */
+    width: 100%; /* Adjusted width to fit the viewport */
     display: flex;
     flex-direction: column;
     padding-top: 0;
@@ -105,18 +107,21 @@
 
   .header h1 {
     font-size: 2.5em;
+    line-height: 1px;
   }
 
   .pros li {
     line-height: normal;
   }
+
   .form_section {
-    width: 355px;
+    width: 100%;
     padding: 0;
     order: 2;
   }
+
   .illustration-sign-up-mobile {
-    width: 375px;
+    width: 100%;
     display: block;
     order: 1;
   }
