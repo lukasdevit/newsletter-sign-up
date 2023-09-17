@@ -2,9 +2,13 @@
 
 import React, { useState } from "react";
 import "./page.css"
-import Attribution from "@/components/attributtion";
+import Attribution from "@/app/components/attributtion";
 import NewsFormSuccess from "@/app/success/newsFormSuccess";
-import Image from "next/image"
+import formDisabler from "./components/formDisabler";
+import Image from "next/image";
+import listIcon from "../../public/news-icon-list.svg";
+import illustrationDesktop from "../../public/illustration-sign-up-desktop.svg" ;
+import illustrationMobile from "../../public/illustration-sign-up-mobile.svg";
 
 function emailValidation() {
   const emailInput = document.getElementById("email-input");
@@ -16,9 +20,11 @@ function emailValidation() {
     emailRequired.hidden = true;
     successPopup.style.display = "flex";
     blurredClasses.classList.add("blur");
+    formDisabler(true);
     return true;
   } else {
     emailRequired.hidden = false;
+    emailInput.classList.add("email-error");
     return false;
   }
 };
@@ -36,30 +42,24 @@ export default function Home() {
           <ul className="pros">
             <li>
               <Image
-                src="/news-icon-list.svg"
-                width={21}
-                height={21}
-                alt=""
+                src={listIcon}
+                alt="Only icon"
                 className="list_icon"
               />
               <p>Product discovery and building what matters</p>
             </li>
             <li>
             <Image
-                src="/news-icon-list.svg"
-                width={21}
-                height={21}
-                alt=""
+                src={listIcon}
+                alt="Only icon"
                 className="list_icon"
               />
               <p>Measuring to ensure updates are a success</p>
             </li>
             <li>
             <Image
-                src="/news-icon-list.svg"
-                width={21}
-                height={21}
-                alt=""
+                src={listIcon}
+                alt="Only icon"
                 className="list_icon"
               />
               <p>And much more!</p>
@@ -75,7 +75,7 @@ export default function Home() {
               id="email-input"
               className="email-input"
               type="email"
-              placeholder="example@yourcompany.com"
+              placeholder="email@company.com"
               autoComplete="off"
               onChange={e => setEmail(e.target.value)}
             />
@@ -86,8 +86,8 @@ export default function Home() {
             >Subscribe to monthly newsletter</button>
           </form>
         </section>
-        <Image width="400" height="593" className="illustration-sign-up-desktop" src="\illustration-sign-up-desktop.svg" alt="" />
-        <Image width="375" height="284" className="illustration-sign-up-mobile" src="\illustration-sign-up-mobile.svg" alt="" />
+        <Image className="illustration-sign-up-mobile" src={illustrationMobile} alt="Sign up very nice illustration" />
+        <Image className="illustration-sign-up-desktop" src={illustrationDesktop} alt="Sign up very nice illustration" />
       </div>
       <NewsFormSuccess email={email}/>
       <Attribution />

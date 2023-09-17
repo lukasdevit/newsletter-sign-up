@@ -1,7 +1,8 @@
 import React from "react";
 import "./newsFormSuccess.css";
-import formDisabler from "@/components/formDisabler";
+import formDisabler from "@/app/components/formDisabler";
 import Image from "next/image";
+import iconSuccess from "../../../public/news-icon-success.svg"
 
 const hidePopup = () => {
   const popup = document.querySelector(".success-content");
@@ -13,7 +14,7 @@ const hidePopup = () => {
 export default function NewsFormSuccess({ email }) {
   return (
       <section role="successful-signup-information" className="success-content centered">
-        <article className="success-info"><Image width="64" height="64" src="/news-icon-success.svg" alt="" />
+        <article className="success-info"><Image src={iconSuccess} alt="Success Icon" />
         <h1>Thanks for subscribing!</h1>
         <p>
           A confirmation email has been sent to <b>{ email }</b>. {" "}

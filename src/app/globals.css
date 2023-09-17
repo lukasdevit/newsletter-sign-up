@@ -4,7 +4,7 @@
   --img-width: var(--container-width) * 0.45;
   --font-default: Roboto;
   --bg-color: hsl(235, 18%, 26%);
-  --color-primary: hsl(4, 100%, 67%);
+  --color-primary: rgb(255, 98, 87);
   --color-darkgrey: hsl(234, 29%, 20%);
   --color-grey: hsl(231, 7%, 60%);
   --color-white: hsl(0, 0%, 100%);
