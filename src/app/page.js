@@ -11,25 +11,20 @@ function emailValidation() {
   const emailRequired = document.querySelector(".email-required");
   const successPopup = document.querySelector(".success-content");
   const blurredClasses = document.querySelector(".home", "illustration-sign-up-desktop");
-  console.log(emailInput.reportValidity());
-  console.log(emailInput.value);
   // if emails is valid and not empty
   if (emailInput.reportValidity() && emailInput.value !== "") {
     emailRequired.hidden = true;
     successPopup.style.display = "flex";
     blurredClasses.classList.add("blur");
-    console.log("valid");
     return true;
   } else {
     emailRequired.hidden = false;
-    console.log("invalid");
     return false;
   }
 };
 
 export default function Home() {
   const [email, setEmail] = useState(""); /* implemented useState */
-  console.log(email);
   return (
     <section className="news-container">
       <div className="home centered">
