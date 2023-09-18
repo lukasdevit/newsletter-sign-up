@@ -25,5 +25,6 @@
 @media screen and (max-width: 850px) {
   :root {
     --container-width: 375px;
+    background: var(--color-white);
   }
 }
