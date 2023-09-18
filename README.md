@@ -1,41 +1,42 @@
-# Frontend Mentor - Newsletter sign-up form with success message solution
+# Newsletter Sign-Up Form with Success Message
 
-This is a solution to the [Newsletter sign-up form with success message challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/newsletter-signup-form-with-success-message-3FC1AZbNrv). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
+This repository contains my solution to the [Newsletter sign-up form with success message challenge](https://www.frontendmentor.io/challenges/newsletter-signup-form-with-success-message-3FC1AZbNrv) on Frontend Mentor. This challenge was a fantastic opportunity for me to enhance my coding skills by building a real-world project. 
 
 ## Table of contents
 
 - [Overview](#overview)
   - [The challenge](#the-challenge)
-  - [Screenshot](#screenshot)
+  - [Screenshots](#screenshots)
   - [Links](#links)
 - [My process](#my-process)
-  - [Built with](#built-with)
-  - [What I learned](#what-i-learned)
-  - [Useful resources](#useful-resources)
+  - [Technologies Used](#built-with)
+  - [Key Takeaways](#key-takeaways)
+  - [Code Snippets](#code-snippets)
+- [Useful resources](#useful-resources)
 - [Author](#author)
 - [Acknowledgments](#acknowledgments)
 
 ## Overview
 
 ### The challenge
+In this challenge, I created a newsletter sign-up form with a success message that allows users to:
 
-Users should be able to:
+- Input their email and submit the form
+- See a success message along with their email upon successful form submission
+- Receive form validation messages in case of:
+  - Leaving the field empty
+  - Incorrectly formatted email address
+- Experience a responsive design that adapts to various screen sizes
+- Interact with hover and focus states for all interactive elements on the page
 
-- Add their email and submit the form
-- See a success message with their email after successfully submitting the form
-- See form validation messages if:
-  - The field is left empty
-  - The email address is not formatted correctly
-- View the optimal layout for the interface depending on their device's screen size
-- See hover and focus states for all interactive elements on the page
-
-### Screenshot
-
-![](./screemshot.jpg)
+### Screenshots
+| Desktop Design         | Active States          | Mobile Design           |
+| ---------------------- | ---------------------- | ------------------------|
+| ![desktop](screenshot1.png) | ![active](screenshot2.png) | ![mobile](screenshot3.png)
 
 ### Links
 
-- Solution URL: ***This repo***
+- Solution URL: [GitHub Link](https://github.com/lukasdevit/newsletter-sign-up)
 - Live Site URL: [Vercel Link](https://vercel.com/lukasdevit/newsletter-sign-up)
 
 ## My process
@@ -49,36 +50,35 @@ Users should be able to:
 - [Next.js](https://nextjs.org/) - React framework
 
 
-### What I learned
+### Key Takeaways
+ Throughout this project, I gained valuable insights. For instance, I learned how to prevent form submission by using e.preventDefault() in a React component. Additionally, I discovered the power of the CSS order property for altering the order of elements in flexbox layouts, especially helpful for responsive design.
 
+### Code Snippets
+Here's a code snippet illustrating the use of e.preventDefault():
 ```html
-<h1>Some HTML code I'm proud of</h1>
+<form onSubmit={e => (e.preventDefault())}>...</form>
 ```
+
+And a CSS example of using the order property for responsive design:
+
 ```css
-.proud-of-this-css {
-  color: papayawhip;
-}
-```
-```js
-const proudOfThisFunc = () => {
-  console.log('🎉')
+@media screen and (max-width: 123px)
+.form-section {
+  order: 2;
 }
 ```
 
 ### Useful resources
+I found the following resources particularly helpful during this project:
 
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
+- [HTMLFormelement](https://developer.mozilla.org/en-US/docs/Web/API/HTMLFormElement) - This resource assisted me in implementing form validation, allowing me to verify user input and execute JavaScript code accordingly.
+- [Gradient from color](https://color.adobe.com/pl/create/image-gradient) - Thanks to this tool, I could replicate the design with remarkable accuracy.
 
 ## Author
-
-- Website - [Add your name here](https://www.your-site.com)
+- Github - [lukasdevit](https://github.com/lukasdevit/newsletter-sign-up)
 - Frontend Mentor - [@lukasdevit](https://www.frontendmentor.io/profile/lukasdevit)
-- Twitter - [@lukasdevit](https://www.twitter.com/yourusername)
 
 
 ## Acknowledgments
 
-This is where you can give a hat tip to anyone who helped you out on this project. Perhaps you worked in a team or got some inspiration from someone else's solution. This is the perfect place to give them some credit.
-
-**Note: Delete this note and edit this section's content as necessary. If you completed this challenge by yourself, feel free to delete this section entirely.**
+I extend my gratitude to [@zoedarkweather](https://www.frontendmentor.io/profile/zoedarkweather) for their valuable feedback and suggestions, which helped enhance the quality of my project.
